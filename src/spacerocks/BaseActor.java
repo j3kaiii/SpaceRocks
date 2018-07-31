@@ -20,12 +20,13 @@ import java.util.ArrayList;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.badlogic.gdx.scenes.scene2d.Group;
 
 /**
  *
  * @author j3kaiii
  */
-public class BaseActor extends Actor{
+public class BaseActor extends Group{
     
     private static Rectangle worldBounds;
     
@@ -271,7 +272,7 @@ public class BaseActor extends Actor{
     }
     
     public void draw(Batch batch, float parentAlpha) {  //отрисовка объекта после всех телодвижений
-        super.draw(batch, parentAlpha);
+        
         
         Color c = getColor();
         batch.setColor(c.r, c.g, c.b, c.a);
@@ -280,6 +281,7 @@ public class BaseActor extends Actor{
             batch.draw(animation.getKeyFrame(elapsedTime),
                     getX(), getY(), getOriginX(), getOriginY(),
                     getWidth(), getHeight(), getScaleX(), getScaleY(), getRotation());
+            super.draw(batch, parentAlpha);
         }
     }
     
