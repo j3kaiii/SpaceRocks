@@ -9,7 +9,7 @@ public class Thrusters extends BaseActor{
 
     public Thrusters(float x, float y, Stage s) {
         super(x, y, s);
-        loadTextire("fire.png");
+        loadTextire("fire_1.png");
     }
 
 }

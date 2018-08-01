@@ -1,5 +1,7 @@
 package spacerocks;
 
+import com.badlogic.gdx.Input.Keys;
+
 /**
  *
  * @author j3kaiii
@@ -19,6 +21,16 @@ public class LevelScreen extends BaseScreen{
 
     @Override
     public void update(float dt) {
+    }
+    
+    public boolean keyDown(int keycode) {
+        if (keycode == Keys.X)
+            spaceship.warp();
+        
+        if (keycode == Keys.SPACE)
+            spaceship.shoot();
+        
+        return false;
     }
 
 }
